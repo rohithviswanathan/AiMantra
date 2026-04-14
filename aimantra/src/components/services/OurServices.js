@@ -13,7 +13,7 @@ import {
   Divider,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { services, processSteps } from "./Exports";
+import { services, processSteps } from "../exports/Exports";
 
 function OurServices() {
 
