@@ -1,24 +1,25 @@
-import React from "react";
 import { Container, Typography, Paper, Box, Grid, Button } from "@mui/material";
-import PersonIcon from "@mui/icons-material/Person";
-import WorkIcon from "@mui/icons-material/Work";
-import AssessmentIcon from "@mui/icons-material/Assessment";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import PaymentIcon from "@mui/icons-material/Payment";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; // ✅ correct import
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { services } from "../services/Exports";
+import { features, services } from "../exports/Exports";
 import "./products.css";
+import { Stats } from "./Stats";
 
 function Products() {
-
   return (
-    <Container maxWidth="lg" sx={{ mt: 13, mb: 12 }}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        mt: 13,
+        mb: 12,
+        borderRadius: 3,
+        p: 2,
+      }}
+    >
       {/* Intro Section */}
       <Paper
         elevation={2}
@@ -28,6 +29,12 @@ function Products() {
           textAlign: "center",
           lineHeight: 1.8,
           mb: 6,
+          opacity: 0,
+          animation: "fadeIn 2s ease forwards",
+          "@keyframes fadeIn": {
+            "0%": { opacity: 0, transform: "translateY(20px)" },
+            "100%": { opacity: 1, transform: "translateY(0)" },
+          },
         }}
       >
         <Typography variant="h3" sx={{ fontWeight: 700, mb: 2, color: "text.primary" }}>
@@ -47,12 +54,20 @@ function Products() {
       </Paper>
 
       {/* Image */}
-      <Box sx={{ mr: 8, mb: 8 }}>
+      <Box
+        sx={{
+          mr: { xs: 1, md: 8 },
+          mb: 8,
+          opacity: 0,
+          animation: "fadeIn 2s ease 0.5s forwards",
+        }}
+      >
         <img
           src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/mpro16.png"
           alt="AiMantra HRMS"
           height={"100%"}
           width={"100%"}
+          style={{ borderRadius: "12px", boxShadow: "0 8px 20px rgba(0,0,0,0.08)" }}
         />
       </Box>
 
@@ -68,39 +83,7 @@ function Products() {
       </Typography>
 
       <Grid container spacing={4}>
-        {/* Feature Card */}
-        {[
-          {
-            icon: <PersonIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Employee Self-Service Portal",
-            desc: "Empower your workforce with access to essential HR functions, allowing them to update personal information, view pay stubs, request time off, and more."
-          },
-          {
-            icon: <WorkIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Recruitment and Applicant Tracking",
-            desc: "Streamline your hiring process with automated job postings, resume parsing, and applicant tracking. Ensure you find the best talent quickly and efficiently."
-          },
-          {
-            icon: <AssessmentIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Performance Management",
-            desc: "Set goals, track progress, and conduct performance evaluations effortlessly, fostering a culture of continuous improvement within your organization."
-          },
-          {
-            icon: <AccessTimeIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Time and Attendance Tracking",
-            desc: "Simplify timekeeping and attendance management with automated tracking, customizable timesheets, and real-time reporting capabilities."
-          },
-          {
-            icon: <PaymentIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Payroll Processing",
-            desc: "Say goodbye to manual payroll calculations and compliance headaches. AiMantra HRMS automates payroll processing, tax deductions, and statutory compliance, ensuring accuracy."
-          },
-          {
-            icon: <BarChartIcon sx={{ fontSize: 40, color: "primary.main" }} />,
-            title: "Analytics and Reporting",
-            desc: "Gain valuable insights into your workforce with comprehensive analytics and reporting tools, enabling data-driven decision-making for strategic HR planning."
-          },
-        ].map((feature, index) => (
+        {features.map((feature, index) => (
           <Grid item xs={12} md={4} key={index}>
             <Paper
               elevation={3}
@@ -109,7 +92,14 @@ function Products() {
                 borderRadius: 2,
                 textAlign: "center",
                 height: "100%",
-                width: "360px"
+                width: "360px",
+                opacity: 0,
+                animation: `fadeIn 1.5s ease ${index * 0.3 + 0.5}s forwards`,
+                transition: "transform 0.4s ease, box-shadow 0.4s ease",
+                "&:hover": {
+                  transform: "translateY(-6px) scale(1.03)",
+                  boxShadow: "0 12px 28px rgba(0,0,0,0.12)",
+                },
               }}
             >
               <Box sx={{ mb: 2 }}>{feature.icon}</Box>
@@ -124,10 +114,10 @@ function Products() {
         ))}
       </Grid>
 
+      {/* Services Section */}
       <Typography variant="h4" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center", mt: 10 }}>
         Our Services
       </Typography>
-
       <Typography variant="h5" sx={{ fontWeight: 500, mb: 2, color: "text.primary", textAlign: "center", mt: 2 }}>
         Our Featured Service that We Provide
       </Typography>
@@ -142,74 +132,64 @@ function Products() {
           pagination={{ clickable: true }}
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{
-            900: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-            },
-            600: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
+            900: { slidesPerView: 3, spaceBetween: 24 },
+            600: { slidesPerView: 2, spaceBetween: 20 },
           }}
           style={{ paddingBottom: "50px" }}
         >
           {services.map((service, index) => (
             <SwiperSlide key={index}>
-                <Paper
-                  elevation={3}
-                  sx={{
-                    p: 4,
-                    borderRadius: 3,
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    minHeight: 260,
-                    boxShadow: `0 6px 18px rgba(10,37,64,0.06)`,
-                    "&:hover": {
-                      transform: "translateY(-6px)",
-                      boxShadow: `0 18px 36px rgba(10,37,64,0.12)`,
-                    },
-                  }}
-                >
-                  <Box sx={{ textAlign: "center" }}>
-                    <Box sx={{ display: "inline-block", mb: 1 }}>{service.icon}</Box>
-                    <Typography
-                      variant="h6"
-                      sx={{ fontWeight: 700, mt: 1, mb: 1, color: "#0a2540" }}
-                    >
-                      {service.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: "text.secondary", lineHeight: 1.6 }}
-                    >
-                      {service.text}
-                    </Typography>
-                  </Box>
-
-                  <Box sx={{ textAlign: "center", mt: 3 }}>
-                    <Button
-                      component={Link}
-                      to={service.path}
-                      variant="outlined"
-                      sx={{
-                        borderColor: "#0a2540",
-                        color: "#0a2540",
-                        px: 3,
-                        py: 0.8,
-                        fontWeight: 600,
-                        "&:hover": { bgcolor: "#0a2540", color: "#fff" },
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Box>
-                </Paper>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: 4,
+                  borderRadius: 3,
+                  minHeight: 260,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  boxShadow: `0 6px 18px rgba(10,37,64,0.06)`,
+                  opacity: 0,
+                  animation: `fadeIn 1.5s ease ${index * 0.3 + 0.5}s forwards`,
+                  transition: "transform 0.4s ease, box-shadow 0.4s ease",
+                  "&:hover": {
+                    transform: "translateY(-6px) scale(1.02)",
+                    boxShadow: `0 18px 36px rgba(10,37,64,0.12)`,
+                  },
+                }}
+              >
+                <Box sx={{ textAlign: "center" }}>
+                  <Box sx={{ display: "inline-block", mb: 1 }}>{service.icon}</Box>
+                  <Typography variant="h6" sx={{ fontWeight: 700, mt: 1, mb: 1, color: "#0a2540" }}>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: "text.secondary", lineHeight: 1.6 }}>
+                    {service.text}
+                  </Typography>
+                </Box>
+                <Box sx={{ textAlign: "center", mt: 3 }}>
+                  <Button
+                    component={Link}
+                    to={service.path}
+                    variant="outlined"
+                    sx={{
+                      borderColor: "#0a2540",
+                      color: "#0a2540",
+                      px: 3,
+                      py: 0.8,
+                      fontWeight: 600,
+                      "&:hover": { bgcolor: "#0a2540", color: "#fff" },
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </Box>
+              </Paper>
             </SwiperSlide>
           ))}
         </Swiper>
       </Box>
+      <Stats />
     </Container>
   );
 }
