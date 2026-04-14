@@ -1,0 +1,7 @@
+.swiper-button-next, .swiper-button-prev {
+  top: 50%;               /* keep them vertically centered */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: none;
+}

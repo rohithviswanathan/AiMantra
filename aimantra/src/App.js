@@ -14,6 +14,7 @@ import Home from "./components/home/Home";
 import AutoScrollButton from "./components/scrollbutton/AutoScrollButton";
 import ScrollTopButton from "./components/scrollbutton/ScrollTopButton";
 import Career from "./components/career/Career";
+import Products from "./components/products/Products";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/services" element={<OurServices />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/services/web-development" element={<WebDevelopment />} />
         <Route path="/services/web-designing" element={<WebDesigning />} />
         <Route path="/services/mobileapp-development" element={<MobileAppDevelopment />} />
