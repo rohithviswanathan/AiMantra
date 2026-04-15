@@ -6,6 +6,7 @@ import {
   Paper,
   Grid
 } from "@mui/material";
+import { motion } from "framer-motion";
 
 function GraphicDesigning() {
   const solutions = [
@@ -38,87 +39,139 @@ function GraphicDesigning() {
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 12 }}>
       {/* Headline */}
-      <Box textAlign="center" mb={6}>
-        <Typography
-          variant="h3"
-          sx={{ fontWeight: 700, color: "#0a2540", mb: 2, textAlign: 'center', pt: 3 }}
-        >
-          Overview
-        </Typography>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 600, color: "text.secondary", textAlign: 'center', pb: 2 }}
-        >
-          Graphic Designing
-        </Typography>
-      </Box>
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Box textAlign="center" mb={6}>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              color: "#0a2540",
+              mb: 2,
+              textAlign: "center",
+              pt: 3,
+            }}
+          >
+            Overview
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 600,
+              color: "text.secondary",
+              textAlign: "center",
+              pb: 2,
+            }}
+          >
+            Graphic Designing
+          </Typography>
+        </Box>
+      </motion.div>
 
       {/* Intro Content */}
-      <Paper
-        elevation={3}
-        sx={{
-          p: 5,
-          borderRadius: 3,
-          lineHeight: 1.8,
-          boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-          mb: 8,
-        }}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-          Graphic design plays a very crucial role in this competitive market as a tool for communication. An impressive graphic design is a perfect combination of texts and pictures to explain your business ideas through different mediums.
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-          Our team of passionate, skilled and experienced creative experts takes pride in giving you results through a wide spectrum of Graphic Design expertise. With the creative lead and strategically driven solution, we would try your brand to connect with consumers on an astonish level.
-        </Typography>
-      </Paper>
+        <Paper
+          elevation={3}
+          sx={{
+            p: 5,
+            borderRadius: 3,
+            lineHeight: 1.8,
+            boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+            mb: 8,
+          }}
+        >
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            Graphic design plays a very crucial role in this competitive market
+            as a tool for communication. An impressive graphic design is a
+            perfect combination of texts and pictures to explain your business
+            ideas through different mediums.
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            Our team of passionate, skilled and experienced creative experts
+            takes pride in giving you results through a wide spectrum of Graphic
+            Design expertise. With the creative lead and strategically driven
+            solution, we would try your brand to connect with consumers on an
+            astonish level.
+          </Typography>
+        </Paper>
+      </motion.div>
 
       {/* Solutions Header */}
-      <Box textAlign="center" mb={4}>
-        <Typography
-          variant="h3"
-          sx={{ fontWeight: 700, color: "#0a2540", mb: 1, textAlign: 'center' }}
-        >
-          Ideal Solutions for You
-        </Typography>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 600, color: "text.secondary", textAlign: 'center', mb: 3 }}
-        >
-          Our Services
-        </Typography>
-      </Box>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <Box textAlign="center" mb={4}>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: 700,
+              color: "#0a2540",
+              mb: 1,
+              textAlign: "center",
+            }}
+          >
+            Ideal Solutions for You
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 600,
+              color: "text.secondary",
+              textAlign: "center",
+              mb: 3,
+            }}
+          >
+            Our Services
+          </Typography>
+        </Box>
+      </motion.div>
 
       {/* Solutions Grid */}
       <Grid container spacing={4}>
         {solutions.map((solution, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Paper
-              elevation={2}
-              sx={{
-                p: 4,
-                borderRadius: 3,
-                height: "100%",
-                textAlign: "center",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-6px)",
-                  boxShadow: "0 12px 24px rgba(0,0,0,0.12)",
-                },
-              }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 600, mb: 2, color: "#0a2540" }}
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  borderRadius: 3,
+                  height: "100%",
+                  textAlign: "center",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-6px)",
+                    boxShadow: "0 12px 24px rgba(0,0,0,0.12)",
+                  },
+                }}
               >
-                {solution.title}
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: "text.secondary", lineHeight: 1.6 }}
-              >
-                {solution.text}
-              </Typography>
-            </Paper>
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: 600, mb: 2, color: "#0a2540" }}
+                >
+                  {solution.title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{ color: "text.secondary", lineHeight: 1.6 }}
+                >
+                  {solution.text}
+                </Typography>
+              </Paper>
+            </motion.div>
           </Grid>
         ))}
       </Grid>
