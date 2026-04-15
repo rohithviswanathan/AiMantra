@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState, useEffect } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { Link, Link as RouterLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
@@ -64,44 +63,61 @@ function Navbar() {
           </Link>
         </Typography>
 
-        {isMobile ? (
-          <>
-            <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
-              <MenuIcon />
-            </IconButton>
-            <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-              <Box sx={{ width: 200, display: "flex", flexDirection: "column", p: 2 }}>
-                {navLinks.map((link) => (
-                  <Button key={link.label} color="inherit" onClick={() => setOpen(false)}>
-                    {link.type === "scroll" ? (
-                      <ScrollLink to={link.to} smooth={true} duration={800}>
-                        {link.label}
-                      </ScrollLink>
-                    ) : (
-                      <RouterLink to={link.to} style={{ textDecoration: "none", color: "inherit" }}>
-                        {link.label}
-                      </RouterLink>
-                    )}
+      {isMobile ? (
+        <>
+          <IconButton color="inherit" edge="end" onClick={() => setOpen(true)}>
+            <MenuIcon />
+          </IconButton>
+          <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
+            <Box sx={{ width: 200, display: "flex", flexDirection: "column", p: 2 }}>
+              {navLinks.map((link) => {
+                const isActive = location.pathname === `/${link.to}`;
+                return (
+                  <Button
+                    key={link.label}
+                    color="inherit"
+                    onClick={() => setOpen(false)}
+                    sx={{
+                      fontWeight: isActive ? "bold" : "normal",
+                      color: isActive ? theme.palette.primary.main : "inherit",
+                    }}
+                  >
+                    <RouterLink
+                      to={link.to}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      {link.label}
+                    </RouterLink>
                   </Button>
-                ))}
-              </Box>
-            </Drawer>
-          </>
-        ) : (
-          navLinks.map((link) => (
-            <Button key={link.label} color="inherit">
-              {link.type === "scroll" ? (
-                <ScrollLink to={link.to} smooth={true} duration={800}>
-                  {link.label}
-                </ScrollLink>
-              ) : (
-                <RouterLink to={link.to} style={{ textDecoration: "none", color: "inherit" }}>
-                  {link.label}
-                </RouterLink>
-              )}
+                );
+              })}
+            </Box>
+          </Drawer>
+        </>
+      ) : (
+        navLinks.map((link) => {
+          const isActive = location.pathname === `/${link.to}`;
+          return (
+            <Button
+              key={link.label}
+              color="inherit"
+              sx={{
+                fontWeight: isActive ? "bold" : "normal",
+                color: isActive ? theme.palette.background.default : "inherit",
+                border: isActive ? "1px solid" : "none",
+                borderColor: isActive ? theme.palette.background.default : "transparent",
+              }}
+            >
+              <RouterLink
+                to={link.to}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {link.label}
+              </RouterLink>
             </Button>
-          ))
-        )}
+          );
+        })
+      )}
       </Toolbar>
     </AppBar>
   );

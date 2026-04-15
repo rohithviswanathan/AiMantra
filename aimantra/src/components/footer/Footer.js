@@ -1,9 +1,18 @@
 import { Box, Container, Typography, Grid, Link as MuiLink, Divider, IconButton } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 function Footer() {
+  const location = useLocation();
+
+  const linkStyle = (to) => ({
+    transition: "color 0.3s ease",
+    fontWeight: location.pathname === to ? "bold" : "normal",
+    color: location.pathname === to ? "#ffcc00" : "inherit",
+    "&:hover": { color: "#ffcc00" },
+  });
+
   return (
     <>
       <Box
@@ -46,12 +55,8 @@ function Footer() {
                     key={i}
                     component={RouterLink}   // Use React Router Link
                     to={item.to}              // Use "to" instead of "href"
-                    color="inherit"
                     underline="hover"
-                    sx={{
-                      transition: "color 0.3s ease",
-                      "&:hover": { color: "#ffcc00" },
-                    }}
+                    sx={linkStyle(item.to)}
                   >
                     {item.label}
                   </MuiLink>
@@ -76,12 +81,8 @@ function Footer() {
                     key={i}
                     component={RouterLink}
                     to={service.to}
-                    color="inherit"
                     underline="hover"
-                    sx={{
-                      transition: "color 0.3s ease",
-                      "&:hover": { color: "#ffcc00" },
-                    }}
+                    sx={linkStyle(service.to)}
                   >
                     {service.label}
                   </MuiLink>
