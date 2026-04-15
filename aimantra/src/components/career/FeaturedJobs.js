@@ -15,10 +15,15 @@ import { motion, AnimatePresence } from "framer-motion";
 function FeaturedJobs() {
   const jobsPerPage = 5;
   const [page, setPage] = useState(1);
+  const [expandedJobId, setExpandedJobId] = useState(null);
 
   const totalPages = Math.ceil(jobs.length / jobsPerPage);
   const startIndex = (page - 1) * jobsPerPage;
   const currentJobs = jobs.slice(startIndex, startIndex + jobsPerPage);
+
+  const handleToggleDetails = (jobId) => {
+    setExpandedJobId(expandedJobId === jobId ? null : jobId);
+  };
 
   return (
     <Container maxWidth="lg" sx={{ mt: 10, mb: 12 }}>
@@ -56,43 +61,99 @@ function FeaturedJobs() {
                 borderRadius: 2,
                 mb: 4,
                 display: "flex",
-                flexDirection: { xs: "column", md: "row" },
-                justifyContent: "space-between",
-                alignItems: { xs: "flex-start", md: "center" },
+                flexDirection: "column", // stack rows vertically
                 width: "100%",
               }}
             >
-              {/* Job Info */}
-              <Box sx={{ flex: 1, mb: { xs: 2, md: 0 } }}>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                  {job.title}
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 0.5 }}>
-                  <strong>JOB ID:</strong> {job.id}
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 0.5 }}>
-                  {job.department}
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 0.5 }}>
-                  <strong>Location:</strong> {job.location}
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 0.5 }}>
-                  <strong>Time Period:</strong> {job.time}
-                </Typography>
-                <Typography variant="body2">
-                  <strong>Experience:</strong> {job.experience}
-                </Typography>
+              {/* Top Row: Info left, Buttons right */}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width: "100%",
+                  mb: 2,
+                }}
+              >
+                {/* Job Info */}
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                    {job.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 0.5 }}>
+                    <strong>JOB ID:</strong> {job.id}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 0.5 }}>
+                    {job.department}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 0.5 }}>
+                    <strong>Location:</strong> {job.location}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mb: 0.5 }}>
+                    <strong>Time Period:</strong> {job.time}
+                  </Typography>
+                  <Typography variant="body2">
+                    <strong>Experience:</strong> {job.experience}
+                  </Typography>
+                </Box>
+
+                {/* Buttons aligned right */}
+                <Box sx={{ display: "flex", gap: 2 }}>
+                  <Button variant="contained" size="small" sx={{ fontWeight: 600 }}>
+                    Apply
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    sx={{ fontWeight: 600 }}
+                    onClick={() => handleToggleDetails(job.id)}
+                  >
+                    {expandedJobId === job.id ? "Hide Details" : "Details"}
+                  </Button>
+                </Box>
               </Box>
 
-              {/* Action Buttons */}
-              <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
-                <Button variant="contained" size="small" sx={{ fontWeight: 600 }}>
-                  Apply
-                </Button>
-                <Button variant="outlined" size="small" sx={{ fontWeight: 600 }}>
-                  Details
-                </Button>
-              </Box>
+              {/* Expanded Details BELOW, centered */}
+              <AnimatePresence>
+                {expandedJobId === job.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4 }}
+                    style={{ width: "100%" }}
+                  >
+                    <Box
+                      sx={{
+                        mt: 2,
+                        p: 2,
+                        borderRadius: 2,
+                        bgcolor: "rgba(0,0,0,0.03)",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center", // center horizontally
+                        textAlign: "center",  // center text
+                      }}
+                    >
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        <strong>Job Title:</strong> Full-time
+                      </Typography>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        <strong>Location:</strong> Gurugram, Haryana
+                      </Typography>
+                      <Typography variant="body2" sx={{ mb: 1 }}>
+                        <strong>Knowledge:</strong> Swift, Objective-C, SwiftUI
+                      </Typography>
+                      <Typography variant="body2" sx={{ mb: 2 }}>
+                        <strong>Salary:</strong> Negotiable
+                      </Typography>
+                      <Button variant="contained" size="small" sx={{ fontWeight: 600 }}>
+                        Apply Now
+                      </Button>
+                    </Box>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </Paper>
           </motion.div>
         ))}
