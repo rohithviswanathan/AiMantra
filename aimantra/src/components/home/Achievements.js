@@ -25,7 +25,7 @@ const Achievements = () => {
       sx={{
         py: 8,
         textAlign: 'center',
-        background: 'linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%)',
+        //background: 'linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%)',
       }}
     >
       <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold', color: '#0a2540' }}>
