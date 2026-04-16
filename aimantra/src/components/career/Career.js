@@ -5,13 +5,14 @@ import FeaturedJobs from "./FeaturedJobs";
 
 function Career() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 13, mb: 12 }}>
+    <Container maxWidth="lg" sx={{ mt: 9, mb: 12 }}>
       {/* First Card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        <br />
         <Paper
           elevation={2}
           sx={{
@@ -19,7 +20,7 @@ function Career() {
             borderRadius: 2,
             textAlign: "center",
             lineHeight: 1.8,
-            mb: 6,
+            mb: 6
           }}
         >
           <Typography
