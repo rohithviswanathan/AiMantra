@@ -11,6 +11,7 @@ function Footer() {
     fontWeight: location.pathname === to ? "bold" : "normal",
     color: location.pathname === to ? "#ffcc00" : "inherit",
     "&:hover": { color: "#ffcc00" },
+    "&:focus": { outline: "none" },
   });
 
   return (
