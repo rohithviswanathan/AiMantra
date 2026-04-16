@@ -22,6 +22,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        <br />
+        <Container maxWidth='lg' sx={{mt:8}}>
         <Box
           sx={{
             minHeight: "50vh",
@@ -32,9 +34,11 @@ function Contact() {
             textAlign: "center",
             backgroundColor: "#f9fafc",
             color: "#0a2540",
-            pt: 15,
-            pb: 6,
+            pt: 2,
+            pb: 2,
             px: 2,
+            borderRadius: "15px", 
+            boxShadow: "0px 4px 15px rgba(0,0,0,0.1)" 
           }}
         >
           <Container maxWidth="md">
@@ -67,6 +71,7 @@ function Contact() {
             </Typography>
           </Container>
         </Box>
+        </Container>
       </motion.div>
 
       {/* Contact Form Section */}
@@ -75,7 +80,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <Box sx={{ bgcolor: "#ffffff", py: 8 }}>
+        <Box sx={{ //bgcolor: "#ffffff",
+          py: 8 }}>
           <Container maxWidth="md">
             <Paper elevation={6} sx={{ p: 5, borderRadius: 3 }}>
               <Typography
@@ -132,7 +138,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <Box sx={{ bgcolor: "#ffffff", py: 4 }}>
+        <Box sx={{ //bgcolor: "#ffffff",
+        py: 4 }}>
           <Container maxWidth="lg">
             <Typography
               variant="h4"
@@ -171,7 +178,8 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <Box sx={{ bgcolor: "#f9fafc", py: 8 }}>
+        <Box sx={{ //bgcolor: "#f9fafc",
+           py: 8 }}>
           <Container maxWidth="md">
             <Typography
               variant="h4"
