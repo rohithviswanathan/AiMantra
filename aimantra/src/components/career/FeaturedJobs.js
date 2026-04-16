@@ -70,9 +70,9 @@ function FeaturedJobs() {
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
-                  alignItems: "center",
                   width: "100%",
                   mb: 2,
+                  flexDirection: { xs: "column", md: "row" }, // stack vertically on mobile
                 }}
               >
                 {/* Job Info */}
@@ -97,15 +97,29 @@ function FeaturedJobs() {
                   </Typography>
                 </Box>
 
-                {/* Buttons aligned right */}
-                <Box sx={{ display: "flex", gap: 2 }}>
-                  <Button variant="contained" size="small" sx={{ fontWeight: 600 }}>
+                {/* Buttons */}
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 2,
+                    flexDirection: "row", // always side by side
+                    mt: { xs: 3, md: 0 }, // add spacing above when stacked below
+                    width: { xs: "100%", md: "auto" }, // full width on mobile
+                    justifyContent: { xs: "center", md: "flex-end" }, // center on mobile
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ fontWeight: 600, flex: { xs: 1, md: "none" } }}
+                  >
                     Apply
                   </Button>
                   <Button
                     variant="outlined"
                     size="small"
-                    sx={{ fontWeight: 600 }}
+                    sx={{ fontWeight: 600, flex: { xs: 1, md: "none" } }}
                     onClick={() => handleToggleDetails(job.id)}
                   >
                     {expandedJobId === job.id ? "Hide Details" : "Details"}
@@ -131,8 +145,8 @@ function FeaturedJobs() {
                         bgcolor: "rgba(0,0,0,0.03)",
                         display: "flex",
                         flexDirection: "column",
-                        alignItems: "center", // center horizontally
-                        textAlign: "center",  // center text
+                        alignItems: "left", // center horizontally
+                        textAlign: "left",  // center text
                       }}
                     >
                       <Typography variant="body2" sx={{ mb: 1 }}>
@@ -147,7 +161,7 @@ function FeaturedJobs() {
                       <Typography variant="body2" sx={{ mb: 2 }}>
                         <strong>Salary:</strong> Negotiable
                       </Typography>
-                      <Button variant="contained" size="small" sx={{ fontWeight: 600 }}>
+                      <Button variant="contained" size="small" sx={{ fontWeight: 600, width: {xs:'100%', md: '260px'} }}>
                         Apply Now
                       </Button>
                     </Box>
