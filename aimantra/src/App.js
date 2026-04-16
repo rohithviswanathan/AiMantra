@@ -15,10 +15,12 @@ import AutoScrollButton from "./components/scrollbutton/AutoScrollButton";
 import ScrollTopButton from "./components/scrollbutton/ScrollTopButton";
 import Career from "./components/career/Career";
 import Products from "./components/products/Products";
+import Layout from "./Layout";
 
 function App() {
   return (
     <Router>
+      <Layout>
       <AutoScrollButton />
       <Navbar />
       <Routes>
@@ -37,6 +39,7 @@ function App() {
       </Routes>
       <Footer />
       <ScrollTopButton />
+      </Layout>
     </Router>
   );
 }
