@@ -38,7 +38,7 @@ function FeaturedJobs() {
             fontWeight: 700,
             mb: 4,
             textAlign: "center",
-            color: "text.primary",
+            color: "#0a2540",
           }}
         >
           Featured Jobs
