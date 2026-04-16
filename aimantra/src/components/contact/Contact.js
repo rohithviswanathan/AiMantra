@@ -126,6 +126,45 @@ function Contact() {
         </Box>
       </motion.div>
 
+      {/* Map Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        <Box sx={{ bgcolor: "#ffffff", py: 4 }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h4"
+              align="center"
+              gutterBottom
+              sx={{ fontWeight: "bold", color: "#0a2540", mb: 4 }}
+            >
+              Our Location
+            </Typography>
+            <Box
+              sx={{
+                borderRadius: 3,
+                overflow: "hidden",
+                boxShadow: 3,
+                height: "500px",
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.2177220872454!2d77.04146907529235!3d28.412686575785457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa72a6435def3cd7%3A0xbcee9a04f03e4cf9!2sAiMantra!5e0!3m2!1sen!2sin!4v1776328840496!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="AiMantra Location"
+              ></iframe>
+            </Box>
+          </Container>
+        </Box>
+      </motion.div>
+
       {/* FAQ Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
