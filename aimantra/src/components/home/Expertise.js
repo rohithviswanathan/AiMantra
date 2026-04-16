@@ -4,6 +4,7 @@ import {
   Typography,
   Card,
   CardContent,
+  Container,
 } from "@mui/material";
 import { blue, orange, green, purple, grey } from "@mui/material/colors";
 
@@ -20,7 +21,8 @@ function Expertise() {
   ];
 
   return (
-    <Box sx={{ py: 8, background: "linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%)" }}>
+    <Container maxWidth='lg'>
+    <Box sx={{ py: 8, px: 3, background: "linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%)", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
       {/* Heading */}
       <Typography variant="h4" gutterBottom align="center" sx={{ fontWeight: "bold", color: "#0a2540" }}>
         Expertise
@@ -68,6 +70,7 @@ function Expertise() {
         ))}
       </Grid>
     </Box>
+    </Container>
   );
 }
 
