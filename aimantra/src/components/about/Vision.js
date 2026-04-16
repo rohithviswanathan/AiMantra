@@ -43,7 +43,7 @@ export function Vision() {
                 opacity: 0,
                 animation: `fadeIn 1.5s ease ${index * 0.3 + 0.5}s forwards`,
                 "&:hover": {
-                  bgcolor: "rgba(240,245,250,0.6)",
+                  bgcolor: "#ffffff",
                   borderRadius: 2,
                   boxShadow: "0 6px 16px rgba(0,0,0,0.08)",
                   transform: "scale(1.02)",
@@ -86,7 +86,7 @@ export function Vision() {
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ color: "text.secondary", lineHeight: 1.7 }}
+                  sx={{ color: "#000000", lineHeight: 1.7 }}
                 >
                   {item.text}
                 </Typography>
@@ -178,7 +178,7 @@ export function Vision() {
         align="center"
         sx={{
           mb: 6,
-          color: "text.secondary",
+          color: "#000000",
           maxWidth: 800,
           mx: "auto",
           opacity: 0,
