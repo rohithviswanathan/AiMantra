@@ -105,12 +105,12 @@ function Navbar() {
                 fontWeight: isActive ? "bold" : "normal",
                 color: isActive ? theme.palette.background.default : "inherit",
                 border: isActive ? "1px solid" : "none",
-                borderColor: isActive ? theme.palette.background.default : "transparent",
+                borderColor: isActive ? theme.palette.background.default : "transparent"
               }}
             >
               <RouterLink
                 to={link.to}
-                style={{ textDecoration: "none", color: "inherit" }}
+                style={{ textDecoration: "none", color: "inherit", "outline": "none"}}
               >
                 {link.label}
               </RouterLink>
