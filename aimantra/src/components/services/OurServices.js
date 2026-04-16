@@ -25,7 +25,7 @@ function OurServices() {
           variant="h3"
           sx={{
             fontWeight: 600,
-            color: "text.secondary",
+            color: "#0a2540",
             textAlign: 'center',
             pt: 4
           }}
@@ -154,7 +154,7 @@ function OurServices() {
         <Typography variant="h3" sx={{ fontWeight: 600, color: "#0a2540", mb: 1, textAlign: 'center' }}>
           How do we work?
         </Typography>
-        <Typography variant="h4" sx={{ fontWeight: 600, color: "text.secondary", mb: 2, textAlign: 'center' }}>
+        <Typography variant="h4" sx={{ fontWeight: 600, color: "#000000", mb: 2, textAlign: 'center' }}>
           The Process of Excellence
         </Typography>
       </Box>
