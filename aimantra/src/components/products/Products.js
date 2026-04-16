@@ -75,10 +75,10 @@ function Products() {
       <Typography variant="h4" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center" }}>
         Our Features
       </Typography>
-      <Typography variant="h6" sx={{ fontWeight: 500, mb: 3, color: "text.secondary", textAlign: "center" }}>
+      <Typography variant="h6" sx={{ fontWeight: 500, mb: 3, color: "#000000", textAlign: "center" }}>
         Experience the Future of HR Management with AiMantra HRMS
       </Typography>
-      <Typography variant="body1" sx={{ mb: 6, color: "text.secondary", textAlign: "center" }}>
+      <Typography variant="body1" sx={{ mb: 6, color: "#000000", textAlign: "center" }}>
         Join us and embark on a journey towards enhanced efficiency, productivity, and employee satisfaction.
       </Typography>
 
