@@ -12,7 +12,7 @@ function AboutUs() {
   return (
     <Box
       sx={{
-        bgcolor: "#f9fafc",
+        //bgcolor: "#f9fafc",
         py: 10
       }}
     >
