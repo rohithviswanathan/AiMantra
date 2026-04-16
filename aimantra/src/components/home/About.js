@@ -22,14 +22,8 @@ function About() {
   ];
 
   return (
-    <Box
-      sx={{
-        py: 10,
-        background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
-      }}
-      id="about"
-    >
-      <Container maxWidth="md">
+    <Box id="about">
+      <Container maxWidth="lg" sx={{ py: 8, mt: 5, background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
