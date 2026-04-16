@@ -21,7 +21,7 @@ function Hero() {
           left: 0,
           width: "100%",
           height: "100%",
-          background: "linear-gradient(135deg, rgba(10,37,64,0.85) 0%, rgba(30,60,114,0.85) 100%)",
+          background: "linear-gradient(135deg, rgba(45, 60, 75, 0.85) 0%, rgba(30,60,114,0.85) 100%)",
           zIndex: 1,
         },
       }}
