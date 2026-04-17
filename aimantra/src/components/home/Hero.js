@@ -8,10 +8,10 @@ function Hero() {
     <Box
       sx={{
         position: "relative",
-        color: "white",
+        //color: "white",
         py: 12,
         textAlign: "center",
-        backgroundImage: `url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")`, // replace with your own image
+        /* backgroundImage: `url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f")`, // replace with your own image 
         backgroundSize: "cover",
         backgroundPosition: "center",
         "&::before": {
@@ -23,11 +23,12 @@ function Hero() {
           height: "100%",
           background: "linear-gradient(135deg, rgba(45, 60, 75, 0.85) 0%, rgba(30,60,114,0.85) 100%)",
           zIndex: 1,
-        },
+        },*/
       }}
       id="top"
     >
-      <Container maxWidth="md" sx={{ position: "relative", zIndex: 2 }}>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
+        <Box sx={{pt:1, background: "#ffffff", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
         {/* Logo */}
         <motion.img
           src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/logo.svg"
@@ -56,7 +57,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <Typography variant="h6" gutterBottom sx={{ color: "rgba(255,255,255,0.85)" }}>
+          <Typography variant="h6" gutterBottom>
             At AiMantra, we offer top-tier services and cutting-edge design solutions, ensuring excellence and client satisfaction in every project.
           </Typography>
         </motion.div>
@@ -74,6 +75,7 @@ function Hero() {
             sx={{
               mt: 3,
               px: 4,
+              mb: 3,
               fontWeight: "bold",
               borderRadius: "30px",
               transition: "all 0.3s ease",
@@ -90,6 +92,7 @@ function Hero() {
             </Link>
           </Button>
         </motion.div>
+        </Box>
       </Container>
     </Box>
   );

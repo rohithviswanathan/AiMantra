@@ -9,29 +9,28 @@ import {
 
 function Clients() {
   return (
-    <Box
-      sx={{
-        py: 8,
-        textAlign: "center",
-        background: "linear-gradient(135deg, #e3f2fd 0%, #fce4ec 100%)", // colorful gradient
-      }}
-    >
-      {/* Heading */}
-      <Typography
-        variant="h4"
-        gutterBottom
-        sx={{ fontWeight: "bold", color: "#0a2540" }}
-      >
-        Meet Our Clients
-      </Typography>
-      <Typography
-        variant="h6"
-        gutterBottom
-        sx={{ color: "text.secondary", mb: 5 }}
-      >
-        We have been working with clients around the world
-      </Typography>
+    <>
+      <Container maxWidth="lg">
+        <Box sx={{ pt:1,textAlign: "center" }}>
+          {/* Heading */}
+          <Typography
+            variant="h2"
+            gutterBottom
+            sx={{ fontWeight: "bold", color: "#0a2540" }}
+          >
+            Meet Our Clients
+          </Typography>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "#000000", mb: 5, pb: 1 }}
+          >
+            We have been working with clients around the world
+          </Typography>
+        </Box>
+      </Container>
 
+    <Box sx={{mb: 4}}>
       <Container maxWidth="md">
         <Grid container spacing={10} justifyContent="center" sx={{ mt: 3 }}>
           {/* Client 1 */}
@@ -66,32 +65,30 @@ function Clients() {
                 >
                   Civilmantra Infracon Pvt Ltd
                 </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                <Typography variant="body2" sx={{ color: "text.secondary", mb: 5 }}>
                   At AiMantra, we take pride in delivering exceptional services
                   that resonate with excellence, ensuring our success is
                   priority.
                 </Typography>
+                <img
+                  src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/defUser.png"
+                  height={40}
+                  width={40}
+                  alt="user"
+                  style={{ borderRadius: "50%" }}
+                />
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
+                >
+                  Susheel Bhardwaj
+                </Typography>
+                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary" }}>
+                  Founder & Managing Director
+                </Typography>
               </CardContent>
             </Card>
-            <Box sx={{ mt: 5 }}>
-              <img
-                src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/defUser.png"
-                height={40}
-                width={40}
-                alt="user"
-                style={{ borderRadius: "50%" }}
-              />
-              <Typography
-                variant="h6"
-                gutterBottom
-                sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
-              >
-                Susheel Bhardwaj
-              </Typography>
-              <Typography variant="body2" sx={{ mt: -1, color: "text.secondary" }}>
-                Founder & Managing Director
-              </Typography>
-            </Box>
           </Grid>
 
           {/* Client 2 */}
@@ -126,36 +123,35 @@ function Clients() {
                 >
                   G-eng Advisory Services Pvt Ltd
                 </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                <Typography variant="body2" sx={{ color: "text.secondary", mb: 6 }}>
                   G-Eng highly recommends AiMantra for their innovative AI
                   solutions — a game-changer in transforming our business
                   operations!
                 </Typography>
+                <img
+                  src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/defUser.png"
+                  height={40}
+                  width={40}
+                  alt="user"
+                  style={{ borderRadius: "50%" }}
+                />
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
+                >
+                  Mahipal Singh
+                </Typography>
+                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary"}}>
+                  Director
+                </Typography>
               </CardContent>
             </Card>
-            <Box sx={{ mt: 5 }}>
-              <img
-                src="https://civilmantra.s3.ap-south-1.amazonaws.com/aimantra-website-images/AimantraAssets/defUser.png"
-                height={40}
-                width={40}
-                alt="user"
-                style={{ borderRadius: "50%" }}
-              />
-              <Typography
-                variant="h6"
-                gutterBottom
-                sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
-              >
-                Mahipal Singh
-              </Typography>
-              <Typography variant="body2" sx={{ mt: -1, color: "text.secondary" }}>
-                Director
-              </Typography>
-            </Box>
           </Grid>
         </Grid>
       </Container>
     </Box>
+    </>
   );
 }
 

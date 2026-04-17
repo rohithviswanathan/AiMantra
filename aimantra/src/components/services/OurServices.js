@@ -79,7 +79,7 @@ function OurServices() {
         <Typography variant="h3" sx={{ fontWeight: 600, color: "#0a2540", mb: 1, textAlign: 'center' }}>
           Ideal Solutions for You
         </Typography>
-        <Typography variant="h4" sx={{ fontWeight: 600, color: "text.secondary", textAlign: 'center' }}>
+        <Typography variant="h4" sx={{ fontWeight: 600, color: "#000000", textAlign: 'center' }}>
           Our Services
         </Typography>
       </Box>

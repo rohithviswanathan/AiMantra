@@ -14,7 +14,7 @@ function Products() {
     <Container
       maxWidth="lg"
       sx={{
-        mt: 13,
+        mt: 9,
         mb: 12,
         borderRadius: 3,
         p: 2,
@@ -67,12 +67,12 @@ function Products() {
           alt="AiMantra HRMS"
           height={"100%"}
           width={"100%"}
-          style={{ borderRadius: "12px", boxShadow: "0 8px 20px rgba(0,0,0,0.08)" }}
+          //style={{ borderRadius: "12px", boxShadow: "0 8px 20px rgba(0,0,0,0.08)" }}
         />
       </Box>
 
       {/* Features Section */}
-      <Typography variant="h4" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center" }}>
+      <Typography variant="h2" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center" }}>
         Our Features
       </Typography>
       <Typography variant="h6" sx={{ fontWeight: 500, mb: 3, color: "#000000", textAlign: "center" }}>
@@ -115,7 +115,7 @@ function Products() {
       </Grid>
 
       {/* Services Section */}
-      <Typography variant="h4" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center", mt: 10 }}>
+      <Typography variant="h2" sx={{ fontWeight: 700, mb: 2, color: "text.primary", textAlign: "center", mt: 10 }}>
         Our Services
       </Typography>
       <Typography variant="h5" sx={{ fontWeight: 500, mb: 2, color: "text.primary", textAlign: "center", mt: 2 }}>

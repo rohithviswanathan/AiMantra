@@ -10,11 +10,12 @@ function Services() {
     >
       <Container id="services" maxWidth="lg">
         {/* Section Heading */}
+        <Box sx={{pt:1 }}>
         <Typography
-          variant="h4"
+          variant="h2"
           align="center"
           gutterBottom
-         
+          sx={{fontWeight: "bold", color: "#0a2540"}}
         >
           Ideal Solution For You
         </Typography>
@@ -22,10 +23,11 @@ function Services() {
           variant="h6"
           align="center"
           gutterBottom
-          sx={{ mb: 6 }}
+          sx={{ mb: 4, pb: 1, color: "#000000" }}
         >
           We have over 2 decades of knowledge in IT sector
         </Typography>
+        </Box>
 
         {/* Service Cards */}
         <Grid container spacing={4} justifyContent="center">

@@ -22,17 +22,18 @@ function Expertise() {
 
   return (
     <Container maxWidth='lg'>
-    <Box sx={{ py: 8, px: 3, background: "linear-gradient(135deg, #f5f7fa 0%, #e4ebf5 100%)", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
+    <Box sx={{ pt: 1 }}>
       {/* Heading */}
-      <Typography variant="h4" gutterBottom align="center" sx={{ fontWeight: "bold", color: "#0a2540" }}>
+      <Typography variant="h2" gutterBottom align="center" sx={{ fontWeight: "bold", color: "#0a2540" }}>
         Expertise
       </Typography>
-      <Typography variant="h6" gutterBottom align="center" sx={{ color: "text.secondary", mb: 1 }}>
+      <Typography variant="h6" gutterBottom align="center" sx={{ color: "#000000", mb: 1 }}>
         Technology is an Art, We are Artists
       </Typography>
-      <Typography variant="subtitle1" gutterBottom align="center" sx={{ color: "text.secondary", mb: 5 }}>
+      <Typography variant="subtitle1" gutterBottom align="center" sx={{ color: "#000000", mb: 3, pb: 1 }}>
         Every Business is Unique. We Select the Perfect Tools for Your Needs
       </Typography>
+    </Box>
 
       {/* Grid of expertise items */}
       <Grid container spacing={2} justifyContent="center">
@@ -69,7 +70,6 @@ function Expertise() {
           </Grid>
         ))}
       </Grid>
-    </Box>
     </Container>
   );
 }

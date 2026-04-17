@@ -11,7 +11,7 @@ export function Stats() {
         {/* Stats Section */}
         <Box sx={{ mt: 10 }}>
         <Typography
-            variant="h4"
+            variant="h2"
             sx={{ fontWeight: 700, mb: 4, textAlign: "center", color: "text.primary" }}
         >
             Our Achievements
