@@ -203,7 +203,7 @@ function Contact() {
                     borderRadius: 2,
                     boxShadow: 2,
                     "&:before": { display: "none" },
-                    "&:hover": { boxShadow: 4, bgcolor: "#f0f4ff" },
+                    "&:hover": { boxShadow: 4, bgcolor: "#f4f6fa" },
                   }}
                 >
                   <AccordionSummary
