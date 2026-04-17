@@ -23,7 +23,7 @@ function About() {
 
   return (
     <Box id="about">
-      <Container maxWidth="lg" sx={{ py: 8, mt: 5, background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
+      <Container maxWidth="lg" sx={{ pt:1, mt: 1  }}>
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -31,15 +31,17 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <Typography
-            variant="h4"
+            variant="h2"
             gutterBottom
             align="center"
-            sx={{ mb: 3, fontWeight: "bold", color: "#0a2540" }}
+            sx={{ mb: 1, fontWeight: "bold", color: "#0a2540", pb: 1 }}
           >
             About Our Work
           </Typography>
         </motion.div>
+      </Container>
 
+      <Container maxWidth="lg" sx={{ py: 4, mt: 3, background: "#ffffff", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
         {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
