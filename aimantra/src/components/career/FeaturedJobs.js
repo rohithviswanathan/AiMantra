@@ -33,9 +33,9 @@ function FeaturedJobs() {
         transition={{ duration: 0.6 }}
       >
         <Typography
-          variant="h4"
+          variant="h2"
           sx={{
-            fontWeight: 700,
+            fontWeight: 600,
             mb: 4,
             textAlign: "center",
             color: "#0a2540",
