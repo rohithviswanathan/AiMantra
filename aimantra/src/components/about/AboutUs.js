@@ -48,7 +48,7 @@ function AboutUs() {
           <Typography
             variant="h5"
             sx={{
-              color: "text.secondary",
+              color: "#000000",
               fontStyle: "italic",
               maxWidth: 700,
               mx: "auto",
