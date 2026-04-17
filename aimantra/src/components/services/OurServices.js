@@ -18,7 +18,7 @@ import { services, processSteps } from "../exports/Exports";
 function OurServices() {
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 10, mb: 12 }}>
+    <Container maxWidth="lg" sx={{ mt: 9, mb: 12 }}>
       {/* Headline */}
       <Box textAlign="center" mb={6}>
         <Typography
