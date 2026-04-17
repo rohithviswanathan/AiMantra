@@ -37,7 +37,7 @@ function WebDevelopment() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 10, mb: 12 }}>
+    <Container maxWidth="lg" sx={{ mt: 9, mb: 12 }}>
       {/* Headline */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -61,7 +61,7 @@ function WebDevelopment() {
             variant="h4"
             sx={{
               fontWeight: 600,
-              color: "text.secondary",
+              color: "#000000",
               textAlign: "center",
               pb: 2,
             }}
@@ -129,7 +129,7 @@ function WebDevelopment() {
             variant="h4"
             sx={{
               fontWeight: 600,
-              color: "text.secondary",
+              color: "#000000",
               textAlign: "center",
               mb: 3,
             }}
