@@ -36,7 +36,7 @@ function Navbar() {
     ? "rgba(10, 37, 64, 0.9)" 
     : scrolled
     ? "rgba(10, 37, 64, 0.9)" // solid after scroll
-    : "transparent"; // transparent at top on Home
+    : "rgba(10, 37, 64, 0.9)"; // transparent at top on Home
 
   const navLinks = [
     { label: "Home", type: "route", to: "/" },
