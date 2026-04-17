@@ -75,7 +75,7 @@ function Hero() {
             sx={{
               mt: 3,
               px: 4,
-              mb: 3,
+              mb: 5,
               fontWeight: "bold",
               borderRadius: "30px",
               transition: "all 0.3s ease",
