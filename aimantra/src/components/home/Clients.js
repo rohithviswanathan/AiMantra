@@ -41,7 +41,6 @@ function Clients() {
                 borderTop: "6px solid #1976d2", // accent color
                 borderRadius: 3,
                 transition: "all 0.3s ease",
-                cursor: "pointer",
                 "&:hover": {
                   transform: "translateY(-6px)",
                   boxShadow: "0px 12px 30px rgba(0,0,0,0.2)",
@@ -75,16 +74,16 @@ function Clients() {
                   height={40}
                   width={40}
                   alt="user"
-                  style={{ borderRadius: "50%" }}
+                  style={{ borderRadius: "50%", cursor: "pointer" }}
                 />
                 <Typography
                   variant="h6"
                   gutterBottom
-                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
+                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540", cursor: "pointer" }}
                 >
                   Susheel Bhardwaj
                 </Typography>
-                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary" }}>
+                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary", cursor: "pointer" }}>
                   Founder & Managing Director
                 </Typography>
               </CardContent>
@@ -99,7 +98,6 @@ function Clients() {
                 borderTop: "6px solid #ff9800", // accent color
                 borderRadius: 3,
                 transition: "all 0.3s ease",
-                cursor: "pointer",
                 "&:hover": {
                   transform: "translateY(-6px)",
                   boxShadow: "0px 12px 30px rgba(0,0,0,0.2)",
@@ -133,16 +131,16 @@ function Clients() {
                   height={40}
                   width={40}
                   alt="user"
-                  style={{ borderRadius: "50%" }}
+                  style={{ borderRadius: "50%", cursor: "pointer" }}
                 />
                 <Typography
                   variant="h6"
                   gutterBottom
-                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540" }}
+                  sx={{ fontSize: "1rem", fontWeight: "bold", color: "#0a2540", cursor: "pointer" }}
                 >
                   Mahipal Singh
                 </Typography>
-                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary"}}>
+                <Typography variant="body2" sx={{ mt: -1, color: "text.secondary", cursor: "pointer" }}>
                   Director
                 </Typography>
               </CardContent>
