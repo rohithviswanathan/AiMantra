@@ -46,7 +46,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
+          <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
             AiMantra Work Hard To <span style={{ color: "#ffcc00" }}>Exceed Your Goals</span>.
           </Typography>
         </motion.div>
@@ -57,7 +57,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="body1" gutterBottom sx={{textAlign: "center", px: 2}}>
             At AiMantra, we offer top-tier services and cutting-edge design solutions, ensuring excellence and client satisfaction in every project.
           </Typography>
         </motion.div>
