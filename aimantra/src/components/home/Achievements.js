@@ -41,7 +41,7 @@ const Achievements = () => {
               elevation={4}
               sx={{
                 height: '100%',
-                width: {xs:'340px', md: '100%'},
+                width: {xs:'360px', md: '100%'},
                 borderRadius: 3,
                 p: 3,
                 transition: 'all 0.3s ease',
