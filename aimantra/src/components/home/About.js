@@ -41,7 +41,8 @@ function About() {
         </motion.div>
       </Container>
 
-      <Container maxWidth="lg" sx={{ py: 4, mt: 3, background: "#ffffff", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
+      <Container maxWidth="lg">
+        <Box sx={{ py: 4, mt: 3, px: 4, background: "#ffffff", borderRadius: "15px", boxShadow: "0px 4px 15px rgba(0,0,0,0.1)"  }}>
         {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -122,6 +123,7 @@ function About() {
             </Button>
           </Box>
         </motion.div>
+        </Box>
       </Container>
     </Box>
   );
