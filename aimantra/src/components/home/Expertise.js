@@ -51,7 +51,7 @@ function Expertise() {
                 borderTop: `6px solid ${item.color}`,
                 borderRadius: 3,
                 p: 3,
-                ml: 1,
+                ml: {xs: 0, md: 1},
                 transition: "all 0.3s ease",
                 "&:hover": {
                   boxShadow: "0px 8px 25px rgba(0,0,0,0.15)",
