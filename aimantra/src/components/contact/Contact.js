@@ -5,15 +5,62 @@ import {
   TextField,
   Button,
   Paper,
+  Snackbar,
+  Alert,
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  useMediaQuery
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { faqs } from "../exports/Exports";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useTheme } from "@mui/material/styles";
 
 function Contact() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    let tempErrors = {};
+    if (!formData.name) tempErrors.name = "Name is required";
+    if (!formData.email) {
+      tempErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Email is invalid";
+    }
+    if (!formData.subject) tempErrors.subject = "Subject is required";
+    if (!formData.message) tempErrors.message = "Message is required";
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      // Simulate successful submission
+      setOpenSnackbar(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -100,23 +147,53 @@ function Contact() {
                 We'd love to hear from you. Fill out the form below and our team
                 will get back to you shortly.
               </Typography>
-
-              <TextField label="Name" variant="outlined" fullWidth sx={{ mb: 3 }} />
-              <TextField label="Email" variant="outlined" fullWidth sx={{ mb: 3 }} />
-              <TextField label="Subject" variant="outlined" fullWidth sx={{ mb: 3 }} />
+              <TextField
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                error={!!errors.name}
+                helperText={errors.name}
+                fullWidth
+                sx={{ mb: 3 }}
+              />
+              <TextField
+                label="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={!!errors.email}
+                helperText={errors.email}
+                fullWidth
+                sx={{ mb: 3 }}
+              />
+              <TextField
+                label="Subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                error={!!errors.subject}
+                helperText={errors.subject}
+                fullWidth
+                sx={{ mb: 3 }}
+              />
               <TextField
                 label="Message"
-                variant="outlined"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                error={!!errors.message}
+                helperText={errors.message}
                 multiline
                 rows={5}
                 fullWidth
                 sx={{ mb: 3 }}
               />
-
               <Button
                 variant="contained"
                 color="primary"
                 fullWidth
+                onClick={handleSubmit}
                 sx={{
                   py: 1.5,
                   fontSize: "1rem",
@@ -128,6 +205,24 @@ function Contact() {
                 Send Message
               </Button>
             </Paper>
+            {/* Snackbar */}
+            <Snackbar
+              open={openSnackbar}
+              autoHideDuration={4000}
+              onClose={handleCloseSnackbar}
+              anchorOrigin={{
+                vertical: isMobile ? "top" : "bottom",
+                horizontal: "center",
+              }}
+            >
+              <Alert
+                onClose={handleCloseSnackbar}
+                severity="success"
+                sx={{ width: "100%" }}
+              >
+                Message submitted successfully!
+              </Alert>
+            </Snackbar>
           </Container>
         </Box>
       </motion.div>
