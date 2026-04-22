@@ -52,7 +52,7 @@ export function Stats() {
                     borderRadius: 4,
                     textAlign: "center",
                     height: "100%",
-                    width: {xs:'100%', md: '260px'},
+                    width: {xs:'360px', md: '260px'},
                     transition: "transform 0.3s ease, box-shadow 0.3s ease",
                     boxShadow: `0 6px 18px rgba(10,37,64,0.08)`,
                     "&:hover": {
