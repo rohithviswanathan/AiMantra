@@ -52,12 +52,18 @@ function About() {
           <Typography
             variant="body1"
             align="justify"
-            sx={{ mb: 4, color: "#333", lineHeight: 1.7 }}
+            sx={{ mb: 2, color: "#333", lineHeight: 1.7 }}
           >
             AiMantra solution is a result-oriented IT company in India and USA.
             With a team of top talented people who are driven to give you the
-            custom software development solution and make your life easier. We
-            are dedicated to develop result driven websites, applications and
+            custom software development solution and make your life easier.
+          </Typography>
+          <Typography
+            variant="body1"
+            align="justify"
+            sx={{ mb: 3, color: "#333", lineHeight: 1.7 }}
+          >
+            We are dedicated to develop result driven websites, applications and
             software that strictly meet business requirements and cater to a
             wide spectrum of projects.
           </Typography>
